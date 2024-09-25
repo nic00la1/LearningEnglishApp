@@ -55,7 +55,6 @@
                 FeedbackLabel.Text = "Poprawnie!";
                 FeedbackLabel.TextColor = Colors.Green;
                 await DisplayAlert("Dobrze!", "Poprawna odpowiedź", "OK");
-                SelectRandomWord();
             }
             else
             {
@@ -69,6 +68,10 @@
             {
                 await DisplayAlert("Koniec", $"Niestety przegrałeś/aś! Przetłumaczono poprawnie {score} słów", "OK");
                 ResetGame();
+            }
+            else
+            {
+                SelectRandomWord();
             }
 
             UpdateUI();
