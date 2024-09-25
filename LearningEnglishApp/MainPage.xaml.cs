@@ -2,23 +2,55 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        private int lives = 3;
+        private int score = 0;
+        private string currentWord = "Ptak"; // Przykładowe słowo do przetłumaczenia
+        private string correctTranslation = "Bird"; // Przykładowe poprawne tłumaczenie
 
         public MainPage()
         {
             InitializeComponent();
+            UpdateUI();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnCheckTranslationClicked(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+            if (TranslationEntry.Text.ToLower() == correctTranslation.ToLower())
+            {
+                score++;
+                FeedbackLabel.Text = "Poprawnie!";
+                FeedbackLabel.TextColor = Colors.Green;
+            }
             else
-                CounterBtn.Text = $"Clicked {count} times";
+            {
+                lives--;
+                FeedbackLabel.Text = "Błędna odpowiedź!";
+                FeedbackLabel.TextColor = Colors.Red;
+            }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            if (lives == 0)
+            {
+                DisplayAlert("Koniec gry", "Utraciłeś wszystkie życia!", "OK");
+                ResetGame();
+            }
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            PolishWordLabel.Text = currentWord;
+            LivesLabel.Text = $"Życia: {lives}";
+            ScoreLabel.Text = $"Przetłumaczono: {score}";
+            TranslationEntry.Text = string.Empty;
+        }
+
+        private void ResetGame()
+        {
+            lives = 3;
+            score = 0;
+            FeedbackLabel.Text = string.Empty;
+            UpdateUI();
         }
     }
 
