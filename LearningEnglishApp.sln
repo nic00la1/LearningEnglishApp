@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningEnglishApp", "LearningEnglishApp\LearningEnglishApp.csproj", "{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C61E28-CBA5-4FEF-B010-8CC42823EE0B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {242C2D1E-8C33-4679-8FC1-E736C72DCA8B}
+	EndGlobalSection
+EndGlobal
