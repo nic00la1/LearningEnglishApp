@@ -13,24 +13,26 @@
             UpdateUI();
         }
 
-        private void OnCheckTranslationClicked(object sender, EventArgs e)
+        private async void OnCheckTranslationClicked(object sender, EventArgs e)
         {
             if (TranslationEntry.Text.ToLower() == correctTranslation.ToLower())
             {
                 score++;
                 FeedbackLabel.Text = "Poprawnie!";
                 FeedbackLabel.TextColor = Colors.Green;
+                await DisplayAlert("Dobrze!", "Poprawna odpowiedź", "OK");
             }
             else
             {
                 lives--;
                 FeedbackLabel.Text = "Błędna odpowiedź!";
                 FeedbackLabel.TextColor = Colors.Red;
+                await DisplayAlert("Niedobrze!", $"To nie jest poprawna odpowiedź. Poprawna odpowiedź to {correctTranslation}. Pozostało Ci: {lives} życia!", "OK");
             }
 
             if (lives == 0)
             {
-                DisplayAlert("Koniec gry", "Utraciłeś wszystkie życia!", "OK");
+                await DisplayAlert("Koniec", $"Niestety przegrałeś/aś! Przetłumaczono poprawnie {score} słów", "OK");
                 ResetGame();
             }
 
