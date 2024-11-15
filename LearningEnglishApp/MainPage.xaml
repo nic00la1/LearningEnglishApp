@@ -5,53 +5,58 @@
              BackgroundColor="#E0E1DD"
              Title="">
 
-   <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" Margin="30" ColumnSpacing="20">
-       <VerticalStackLayout Grid.Row="0" Margin="0,20, 0,170">
-           <Label Text="Przetłumacz"/>
-           <Label Text="słowo na język"/>
-           <Label Text="angielski"/>
-       </VerticalStackLayout>
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,*" Margin="30" ColumnSpacing="20">
+        <VerticalStackLayout Grid.Row="0" Margin="0,20, 0,170">
+            <Label Text="Przetłumacz"/>
+            <Label Text="słowo na język"/>
+            <Label Text="angielski"/>
+        </VerticalStackLayout>
 
-       <Label Grid.Row="1"
+        <Label Grid.Row="1"
               x:Name="PolishWordLabel"
               Text="Ptak"
               FontSize="48"
               FontAttributes="Bold"
               HorizontalOptions="Center" />
 
-       <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10">
-           <Entry x:Name="TranslationEntry"
+        <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="10">
+            <Entry x:Name="TranslationEntry"
                   Placeholder="Wpisz tłumaczenie"
                   BackgroundColor="#FFFFFF"
                   HorizontalOptions="FillAndExpand" />
 
-           <Button Text="Sprawdź"
+            <Button Text="Sprawdź"
                    BackgroundColor="#415A77"
                    TextColor="White"
                    Clicked="OnCheckTranslationClicked"
                    HorizontalOptions="Center"
                    Grid.Column="1"/>
-       </Grid>
+        </Grid>
 
-       <Label Grid.Row="3"
+        <Label Grid.Row="3"
               x:Name="FeedbackLabel"
               Text=""
               FontSize="24"
               HorizontalOptions="Center" />
 
-       <Grid Grid.Row="4" ColumnDefinitions="*,*" VerticalOptions="End">
-           <Label x:Name="LivesLabel"
+        <Grid Grid.Row="4" ColumnDefinitions="*,*,*" VerticalOptions="End">
+            <Label x:Name="LivesLabel"
                   Text="Życia: 3"
                   FontSize="15"
                   HorizontalOptions="Center"
                   Margin="-70, 0, 0 ,0"/>
 
-           <Label x:Name="ScoreLabel"
+            <Label x:Name="ScoreLabel"
                   Text="Przetłumaczono: 0"
                   FontSize="15"
                   Grid.Column="1"
                   HorizontalOptions="Center"/>
 
-       </Grid>
-   </Grid>
+            <Label x:Name="HintsLabel"
+                  Text="Podpowiedzi: 2"
+                  FontSize="15"
+                  Grid.Column="2"
+                  HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
 </ContentPage>
